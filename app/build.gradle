@@ -19,6 +19,9 @@ android {
         }
     }
 }
+android {
+    useLibrary 'org.apache.http.legacy'
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -29,4 +32,15 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
     implementation 'com.android.volley:volley:1.1.1'
+    // implementation 'com.google.http-client:google-http-client-android:+'
+
+    // implementation 'com.google.api-client:google-api-client-android:+'
+    //implementation 'org.apache.httpcomponents:httpcore:4.4.1'
+    // implementation 'org.apache.httpcomponents:httpclient:4.5'
+    // implementation 'com.google.api-client:google-api-client-gson:+'
+    implementation 'com.google.firebase:firebase-core:16.0.4'
+    // implementation 'com.google.firebase:firebase-messaging:10:0.0'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.firebase:firebase-messaging:17.3.4'
 }
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "154281261579",
+    "firebase_url": "https://unique-poetry-238209.firebaseio.com",
+    "project_id": "unique-poetry-238209",
+    "storage_bucket": "unique-poetry-238209.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154281261579:android:290552df16b51ae1",
+        "android_client_info": {
+          "package_name": "com.example.fooddelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154281261579-335bv8rf3epqoflfcdgilp9gtpp7t2iu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fooddelivery",
+            "certificate_hash": "27dc1b44e3c7f8673a0bbb3af754e99491ba9fb6"
+          }
+        },
+        {
+          "client_id": "154281261579-l6clneapobejlnin3vcje36n44vkgami.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcdcmU-x7czDFsXdsz3xNpq8oVVeyzFns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154281261579-l6clneapobejlnin3vcje36n44vkgami.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

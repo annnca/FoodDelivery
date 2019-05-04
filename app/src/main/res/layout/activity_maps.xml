@@ -19,10 +19,12 @@
         android:orientation="vertical"
         android:layout_gravity="bottom"
         android:background="@android:color/white">
+
         <TextView
+            android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Put a pin on the delievery address! "
-            />
+            android:textColor="#000000" />
     </LinearLayout>
 </FrameLayout>

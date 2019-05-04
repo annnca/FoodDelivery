@@ -3,6 +3,7 @@ package com.example.fooddelivery;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.support.v7.app.AlertDialog;
@@ -25,11 +26,17 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
         if(haveNetwork()){
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
+        etUsername.setTypeface(custom_font);
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        etPassword.setTypeface(custom_font);
         final TextView tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
+        tvRegisterLink.setTypeface(custom_font1);
         final Button bLogin = (Button) findViewById(R.id.bSignIn);
+        bLogin.setTypeface(custom_font1);
 
         tvRegisterLink.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,11 +62,11 @@ public class LoginActivity extends AppCompatActivity {
 
                             if (success) {
                                 String name = jsonResponse.getString("name");
-                                int age = jsonResponse.getInt("age");
+                                int email = jsonResponse.getInt("email");
 
                                 Intent intent = new Intent(LoginActivity.this, UserAreaActivity.class);
                                 intent.putExtra("name", name);
-                                intent.putExtra("age", age);
+                                intent.putExtra("email", email);
                                 intent.putExtra("username", username);
                                 LoginActivity.this.startActivity(intent);
                             } else {

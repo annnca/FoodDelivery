@@ -1,5 +1,6 @@
 package com.example.fooddelivery;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
@@ -18,11 +19,23 @@ public class TotalsActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.totals);
+
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
+        Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
+
         mApp = ((MyApp)getApplicationContext());
+
+        TextView tv3 = (TextView)findViewById(R.id.textView3);
+        tv3.setTypeface(custom_font);
+
         et_summary = (EditText)findViewById(R.id.et_summary);
+        et_summary.setTypeface(custom_font);
+
         tv_total = (TextView)findViewById(R.id.tv_total);
+        tv_total.setTypeface(custom_font);
 
         Toast.makeText(getApplicationContext(), "You have chosen the "+""+mApp.getmGlobalVariable(), Toast.LENGTH_LONG).show();
+        mApp.setGlobalVarValue(mApp.getmGlobalVariable().replace("\\n", System.getProperty("line.separator")));
         et_summary.setText(mApp.getmGlobalVariable()+"\n");
         String str = mApp.getmGlobalVariable();
         StringTokenizer st = new StringTokenizer(str,"$");

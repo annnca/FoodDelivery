@@ -5,17 +5,17 @@
     $connect = mysqli_connect("my_host", "my_user", "my_password", "my_database");
     
     $name = $_POST["name"];
-    $age = $_POST["age"];
+    $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
 
      function registerUser() {
-        global $connect, $name, $age, $username, $password;
+        global $connect, $name, $email, $username, $password;
 		//create a password hash; with password_hash cu default ca algortihm for password
 		//encryption 
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
-        $statement = mysqli_prepare($connect, "INSERT INTO user (name, age, username, password) VALUES (?, ?, ?, ?)");
-        mysqli_stmt_bind_param($statement, "siss", $name, $age, $username, $passwordHash);
+        $statement = mysqli_prepare($connect, "INSERT INTO user (name, email, username, password) VALUES (?, ?, ?, ?)");
+        mysqli_stmt_bind_param($statement, "siss", $name, $email, $username, $passwordHash);
         mysqli_stmt_execute($statement);
         mysqli_stmt_close($statement);     
     }
