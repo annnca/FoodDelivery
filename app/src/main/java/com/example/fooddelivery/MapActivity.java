@@ -109,20 +109,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 
                     //execute our method for searching
                     geoLocate();
-                    // TODO: 5/5/2019
-                    /*new AlertDialog.Builder(MapActivity.this)
-                            .setTitle("Address set")
-                            .setMessage("Your destination address has been set up!")
-
-                            // Specifying a listener allows you to take an action before dismissing the dialog.
-                            // The dialog is automatically dismissed when a dialog button is clicked.
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    finish();
-                                }
-                            })
-                            .setIcon(android.R.drawable.checkbox_on_background)
-                            .show();*/
                 }
 
                 return false;
@@ -134,7 +120,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
             public void onClick(View view) {
                 Log.d(TAG, "onClick: clicked gps icon");
                 getDeviceLocation();
-                // TODO: 5/5/2019
+
                 new AlertDialog.Builder(MapActivity.this)
                         .setTitle("Address set")
                         .setMessage("Your destination address has been set up!")

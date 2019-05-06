@@ -26,11 +26,6 @@ public class RegisterActivity extends AppCompatActivity {
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
         Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-        builder.setMessage("Register failed")
-                .setNegativeButton("Retry", null)
-                .create()
-                .show();
         final EditText etEmail = (EditText)findViewById(R.id.etEmail);
         etEmail.setTypeface(custom_font);
         //the only time this is assigned FINAL

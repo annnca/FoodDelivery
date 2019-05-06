@@ -103,14 +103,11 @@ public class FoodsActivity extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
 
         while(c.moveToNext()){
-            /*buffer.append("Rollno"+c.getString(0)+"\n");
-            buffer.append("Name"+c.getString(1)+"\n");
-            buffer.append("Marks"+c.getString(2)+"\n\n");*/
+
             locations.put("\n"+c.getString(1).toString()+"[ $"+c.getString(2).toString()+" ]", new Location(c.getInt(0), c.getString(1).toString(), c.getInt(2)));
 
         }
-       /* locations.put("Takeo", new Location(-27.29, 153.08));
-        locations.put("Komport", new Location(-22.22, 33.33));*/
+
         return locations;
     }
 

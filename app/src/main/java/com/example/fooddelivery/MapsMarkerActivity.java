@@ -62,7 +62,6 @@ public class MapsMarkerActivity extends AppCompatActivity
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        // TODO: 5/5/2019  
         new AlertDialog.Builder(MapsMarkerActivity.this)
                 .setTitle("Address set")
                 .setMessage("Your destination address has been set up!")
@@ -79,5 +78,4 @@ public class MapsMarkerActivity extends AppCompatActivity
                 .show();
     }
 }
-//https://stackoverflow.com/questions/13728041/move-markers-in-google-map-v2-android
 

@@ -57,14 +57,11 @@ public class AddFoods extends AppCompatActivity {
         Cursor c = db.rawQuery("SELECT * FROM table_foods order by food_id asc", null);
         StringBuffer buffer = new StringBuffer();
         while(c.moveToNext()){
-            /*buffer.append("Rollno"+c.getString(0)+"\n");
-            buffer.append("Name"+c.getString(1)+"\n");
-            buffer.append("Marks"+c.getString(2)+"\n\n");*/
+
             locations.put("- "+c.getString(1).toString()+"[$"+c.getString(2).toString()+"]", new Location(c.getInt(0), c.getString(1).toString(), c.getInt(2)));
 
         }
-        /*locations.put("Takeo", new Location(-27.29, 153.08));
-        locations.put("Komport", new Location(-22.22, 33.33));*/
+
         return locations;
     }
     private void addListenerOnButton() {
@@ -82,7 +79,7 @@ public class AddFoods extends AppCompatActivity {
                 db.execSQL("INSERT INTO table_foods VALUES('"+id.getText()+"','"+name.getText()+"','"+price.getText()+"');");
                 Toast toast = Toast.makeText(context,"Success, Record added", Toast.LENGTH_SHORT);
                 toast.show();
-                //showMessage("Success","Record added" );
+                showMessage("Success","Record added" );
             }
         });
 
@@ -93,7 +90,7 @@ public class AddFoods extends AppCompatActivity {
                 db.execSQL("UPDATE table_foods SET food_name = '"+name.getText()+"' WHERE food_id='"+id.getText()+"'");
                Toast toast = Toast.makeText(context,"Success, Record modified", Toast.LENGTH_SHORT);
                toast.show();
-               // showMessage("Success","Record modified" );
+                showMessage("Success","Record modified" );
             }
         });
 
@@ -104,7 +101,7 @@ public class AddFoods extends AppCompatActivity {
                 db.execSQL("DELETE FROM table_foods WHERE food_id='"+id.getText()+"'");
                 Toast toast = Toast.makeText(context,"Success, Record deleted", Toast.LENGTH_SHORT);
                 toast.show();
-                // showMessage("Success","Record deleted" );
+                 showMessage("Success","Record deleted" );
             }
         });
 
@@ -127,21 +124,11 @@ public class AddFoods extends AppCompatActivity {
                     buffer.append("Name: "+c.getString(1)+"\n");
                     buffer.append("Price: "+c.getString(2)+"\n\n");
                 }
-                //Toast toast = Toast.makeText(context,"Details "+ buffer.toString(), Toast.LENGTH_SHORT);
-                //toast.show();
+                Toast toast = Toast.makeText(context,"Details "+ buffer.toString(), Toast.LENGTH_SHORT);
+                toast.show();
                 showMessage("All",buffer.toString());
             }
         });
-
-  /*      Button button1 = (Button)findViewById(R.id.button);
-        button1.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, FoodsActivity.class);
-                startActivity(intent);
-            }
-        });*/
 
 
     }

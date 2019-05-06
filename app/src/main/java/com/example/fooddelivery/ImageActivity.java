@@ -111,7 +111,7 @@ public class ImageActivity extends AppCompatActivity implements View.OnClickList
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             image.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
             String encodedImage = Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT);
-//https://www.youtube.com/watch?v=TMnQJKtmOd4
+
             ArrayList<NameValuePair> dataToSend = new ArrayList<>();
             dataToSend.add(new BasicNameValuePair("image", encodedImage));
             dataToSend.add(new BasicNameValuePair("name", name));
