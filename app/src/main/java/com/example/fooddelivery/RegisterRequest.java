@@ -5,7 +5,6 @@ import com.android.volley.toolbox.StringRequest;
 
 import java.util.HashMap;
 import java.util.Map;
-//request to the php file on the server and get a response as a string
 
 public class RegisterRequest extends StringRequest {
     private static  final String REGISTER_REQUEST_URL ="https://mcproj1234.000webhostapp.com/Register.php";
@@ -17,7 +16,7 @@ public class RegisterRequest extends StringRequest {
         params.put("name", name);
         params.put("username", username);
         params.put("password", password);
-        params.put("email", email+"");
+        params.put("email", email);
     }
     @Override
     public Map<String, String> getParams(){

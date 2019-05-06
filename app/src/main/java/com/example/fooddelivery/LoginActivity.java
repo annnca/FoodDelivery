@@ -26,8 +26,10 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
         Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
+
         if(haveNetwork()){
         final EditText etUsername = (EditText) findViewById(R.id.etUsername);
         etUsername.setTypeface(custom_font);

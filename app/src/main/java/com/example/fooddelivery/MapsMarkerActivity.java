@@ -1,10 +1,13 @@
 package com.example.fooddelivery;
 //https://developers.google.com/maps/documentation/android-sdk/map-with-marker#manifest
+import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
@@ -55,48 +58,26 @@ public class MapsMarkerActivity extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
-        LatLng sydney = new LatLng(-33.852, 151.211);
+        LatLng sydney = new LatLng(44.19, 23.48);
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        // TODO: 5/5/2019  
+        new AlertDialog.Builder(MapsMarkerActivity.this)
+                .setTitle("Address set")
+                .setMessage("Your destination address has been set up!")
+
+                // Specifying a listener allows you to take an action before dismissing the dialog.
+                // The dialog is automatically dismissed when a dialog button is clicked.
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Continue with delete operation
+                        finish();
+                    }
+                })
+                .setIcon(android.R.drawable.checkbox_on_background)
+                .show();
     }
 }
-//Toast.makeText(getApplicationContext(), "Location set! Thank you! ", Toast.LENGTH_LONG).show();
 //https://stackoverflow.com/questions/13728041/move-markers-in-google-map-v2-android
-/*    public void animateMarker(final Marker marker, final LatLng toPosition,
-                              final boolean hideMarker) {
-        final Handler handler = new Handler();
-        final long start = SystemClock.uptimeMillis();
-        Projection proj = mGoogleMapObject.getProjection();
-        Point startPoint = proj.toScreenLocation(marker.getPosition());
-        final LatLng startLatLng = proj.fromScreenLocation(startPoint);
-        final long duration = 500;
 
-        final Interpolator interpolator = new LinearInterpolator();
-
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                long elapsed = SystemClock.uptimeMillis() - start;
-                float t = interpolator.getInterpolation((float) elapsed
-                        / duration);
-                double lng = t * toPosition.longitude + (1 - t)
-                        * startLatLng.longitude;
-                double lat = t * toPosition.latitude + (1 - t)
-                        * startLatLng.latitude;
-                marker.setPosition(new LatLng(lat, lng));
-
-                if (t < 1.0) {
-                    // Post again 16ms later.
-                    handler.postDelayed(this, 16);
-                } else {
-                    if (hideMarker) {
-                        marker.setVisible(false);
-                    } else {
-                        marker.setVisible(true);
-                    }
-                }
-            }
-        });
-    }
-*/
