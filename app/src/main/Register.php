@@ -1,5 +1,5 @@
 <?php
-    $con = mysqli_connect("mcproj1234.000webhostapp.com", "id9493741_user", "ANCAMARIA", "id9493741_mcproj1234");
+    $con = mysqli_connect("mcproj1234.000webhostapp.com", "id9493741_user", "XXXXXXXXX", "id9493741_mcproj1234");
     
     $name = $_POST["name"];
     $email = $_POST["email"];
